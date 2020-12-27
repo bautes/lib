@@ -1,0 +1,24 @@
+{
+  "name": "@juanbautista.ortiz/lib",
+  "version": "1.0.0",
+  "description": "Libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bautes/lib.git"
+  },
+  "keywords": [
+    "simple",
+    "react",
+    "calendar"
+  ],
+  "author": "Juan Bautista Ortiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bautes/lib/issues"
+  },
+  "homepage": "https://github.com/bautes/lib#readme"
+}
