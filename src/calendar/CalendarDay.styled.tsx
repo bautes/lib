@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { tabletUp, tabletOnly, mobileOnly } from "./styled/_responsive";
+import { tabletUp, tabletOnly, mobileOnly } from "../styled/_responsive";
 
 export const border = "1px solid gray";
 
