@@ -19,5 +19,7 @@ export const getCalendar = (year: number, m: number): number[] => {
   return calendar;
 };
 
-const ISO_DATE = (new Date()).toISOString().replace('-0', '-');
-export const isToday = (year: number, month: number, day: number) => (!!~ISO_DATE.indexOf(`${year}-${month}-${day}T`));
+export const isToday = (date: Date) => {
+  const ISO_DATE = (new Date()).toISOString().replace('-0', '-');
+  return (day: number) => (!!~ISO_DATE.indexOf(`${date.getFullYear()}-${date.getMonth() + 1}-${day}T`))
+};

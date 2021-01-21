@@ -4,6 +4,7 @@ import { border, Day } from './CalendarDay.styled';
 
 export const Wrapper = styled.div`
   max-width: calc(100vw - 2rem);
+  --calendar-day-height: calc(100vh / 7);
   margin: 0 auto;
   ${tabletUp`
     max-width: calc(100vw - 20rem);

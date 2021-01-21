@@ -92,7 +92,7 @@ export const Day = styled.li<DayProps>`
   margin: 0;
   width: 100%;
   box-sizing: border-box;
-  height: calc(100vh / 7);
+  height: var(--calendar-day-height);
   vertical-align: top;
   border: ${border};
   border-top: none;
@@ -109,9 +109,9 @@ export const Day = styled.li<DayProps>`
   &:nth-child(7n),
   &:nth-child(7n + 1) {
     ${cssDay__weekend}
-    ${(props) => (props.active ? cssDay__active : "")};
-    ${(props) => (props.today ? cssDay__today : "")};
-    ${(props) => (props.active ? cssDay__active : "")};
+    ${(props) => (props.disabled && cssDay__disabled)};
+    ${(props) => (props.today && cssDay__today)};
+    ${(props) => (props.active && cssDay__active)};
   }
 
   &:nth-child(7n),
@@ -123,8 +123,8 @@ export const Day = styled.li<DayProps>`
     display: inline-block;
     width: calc(100% / 7);
   `}
-  ${(props) => (props.disabled ? cssDay__disabled : "")};
-  ${(props) => (props.today ? cssDay__today : "")};
-  ${(props) => (props.active ? cssDay__active : "")};
+  ${(props) => (props.disabled && cssDay__disabled)};
+  ${(props) => (props.today && cssDay__today)};
+  ${(props) => (props.active && cssDay__active)};
   ${cssDay__weekdays}
 `;

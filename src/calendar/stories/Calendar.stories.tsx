@@ -7,22 +7,23 @@ import Calendar, {
   CalendarProps,
 } from "../Calendar";
 
-const StyledWrapper = styled.div`
-  .Calendar {
-    border: 1px solid blue;
-  }
+const StyledCalendar = styled(Calendar)`
+  border: 1px solid blue;
   .Calendar-day {
     border: 1px solid green;
   }
   .Calendar-day[data-active] {
-    background-color: orange;
-    :after {
-      content: "Today "attr(data-day);
-      font-size: 30px;
-    }
+    background-color: gold;
   }
   .Calendar-day[data-today] {
-    background-color: gold;
+    &:after {
+      content: "Today "attr(data-day);
+      font-size: 20px;
+    }
+  }
+  .Calendar-day[data-disabled] {
+    background-color: darkgray;
+    border: none;
   }
 `;
 
@@ -33,17 +34,18 @@ export default {
 } as Meta;
 
 const Template: Story<CalendarProps> = (args) => <Calendar {...args} />;
-const StyledTemplate: Story<CalendarProps> = (args) => <StyledWrapper><Calendar {...args} /></StyledWrapper>;
+const StyledTemplate: Story<CalendarProps> = (args) => <StyledCalendar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  initialDate: new Date(),
+  date: new Date(),
   renderDay: () => <span />,
 };
 
 
 export const Styled = StyledTemplate.bind({});
 Styled.args = {
-  initialDate: new Date(),
+  date: new Date(),
   renderDay: () => <span />,
+  activeDay: new Date(),
 };
