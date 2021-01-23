@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import { tabletUp, tabletOnly, mobileOnly } from "../styled/_responsive";
+import styled, { css } from 'styled-components';
+import { tabletUp, tabletOnly, mobileOnly } from '../styled/_responsive';
 
-export const border = "1px solid gray";
+export const border = '1px solid gray';
 
 const cssDay__disabled = css`
   display: none;
@@ -96,7 +96,6 @@ export const Day = styled.li<DayProps>`
   vertical-align: top;
   border: ${border};
   border-top: none;
-  border-right: none;
 
   &::after {
     content: attr(data-day);
@@ -109,9 +108,9 @@ export const Day = styled.li<DayProps>`
   &:nth-child(7n),
   &:nth-child(7n + 1) {
     ${cssDay__weekend}
-    ${(props) => (props.disabled && cssDay__disabled)};
-    ${(props) => (props.today && cssDay__today)};
-    ${(props) => (props.active && cssDay__active)};
+    ${props => props.disabled && cssDay__disabled};
+    ${props => props.today && cssDay__today};
+    ${props => props.active && cssDay__active};
   }
 
   &:nth-child(7n),
@@ -122,9 +121,10 @@ export const Day = styled.li<DayProps>`
   ${tabletUp`
     display: inline-block;
     width: calc(100% / 7);
+    border-right: none;
   `}
-  ${(props) => (props.disabled && cssDay__disabled)};
-  ${(props) => (props.today && cssDay__today)};
-  ${(props) => (props.active && cssDay__active)};
+  ${props => props.disabled && cssDay__disabled};
+  ${props => props.today && cssDay__today};
+  ${props => props.active && cssDay__active};
   ${cssDay__weekdays}
 `;

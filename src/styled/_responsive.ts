@@ -3,8 +3,14 @@ import {
   CSSObject,
   FlattenSimpleInterpolation,
   SimpleInterpolation,
-} from "styled-components";
-import { breakpoints } from "./_variables";
+} from 'styled-components';
+
+const breakpoints = {
+  xs: '480px',
+  sm: '768px',
+  md: '992px',
+  lg: '1200px',
+};
 
 export const mobileOnly = (
   first: CSSObject | TemplateStringsArray,

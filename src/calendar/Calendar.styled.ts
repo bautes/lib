@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { tabletUp } from "../styled/_responsive";
+import styled from 'styled-components';
+import { tabletUp } from '../styled/_responsive';
 import { border, Day } from './CalendarDay.styled';
 
 export const Wrapper = styled.div`

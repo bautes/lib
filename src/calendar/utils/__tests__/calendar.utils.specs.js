@@ -1,13 +1,16 @@
-import { getCalendar, isToday } from "../calendar.utils";
+import { getCalendar, isToday } from '../calendar.utils';
 
-test("isCurrentDay", () => {
+test('isCurrentDay', () => {
   const today = new Date();
-  expect(isToday(today.getFullYear(), today.getMonth() + 1, today.getDate())).toEqual(true);
-  expect(isToday(today.getFullYear(), today.getMonth() + 1, today.getDate() - 1)).toEqual(false);
+  expect(
+    isToday(today.getFullYear(), today.getMonth() + 1, today.getDate())
+  ).toEqual(true);
+  expect(
+    isToday(today.getFullYear(), today.getMonth() + 1, today.getDate() - 1)
+  ).toEqual(false);
 });
 
-
-test("getCalendar", () => {
+test('getCalendar', () => {
   expect(getCalendar(2020, 12)).toEqual([
     // December, 2020
     // S,  M,  T,  W,  T,  F,  S
@@ -50,7 +53,7 @@ test("getCalendar", () => {
     30,
     31,
     0,
-    0
+    0,
   ]);
 
   expect(getCalendar(2020, 2)).toEqual([

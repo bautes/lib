@@ -1,8 +1,9 @@
-import React from "react";
-import { getCalendar, isToday } from "./utils/calendar.utils";
-import CalendarHeader from "./CalendarHeader";
-import CalendarDay from "./CalendarDay";
-import * as Styled from "./Calendar.styled";
+import React from 'react';
+import { getCalendar, isToday } from './utils/calendar.utils';
+import CalendarHeader from './CalendarHeader';
+import CalendarDay from './CalendarDay';
+import * as Styled from './Calendar.styled';
+
 export interface CalendarProps {
   className?: string;
   date: Date;
@@ -22,7 +23,7 @@ const Calendar = ({
   const _isToday = isToday(date);
 
   return (
-    <Styled.Wrapper className={className + " Calendar"}>
+    <Styled.Wrapper className={className + ' Calendar'}>
       <CalendarHeader />
       <Styled.CalendarBody className="Calendar-body">
         {calendar.map((day, key) => {

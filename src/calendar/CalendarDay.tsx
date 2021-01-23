@@ -1,5 +1,5 @@
-import React from "react";
-import { Day } from "./CalendarDay.styled";
+import React from 'react';
+import { Day } from './CalendarDay.styled';
 export interface CalendarDayProps {
   day: number;
   today: boolean;
@@ -17,9 +17,9 @@ const CalendarDay = ({
 }: CalendarDayProps) => {
   const props = {
     today,
-    "data-today": today || null,
+    'data-today': today || null,
     active,
-    "data-active": active || null,
+    'data-active': active || null,
   };
   return day ? (
     <Day data-day={day} onClick={onClick} className="Calendar-day" {...props}>

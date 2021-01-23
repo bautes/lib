@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Icon, { TYPES } from '../';
+import Icon, { TYPES } from '../Icon';
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const StyledIcon = styled(Icon)`
   --icon-color: black;
   margin: 1rem 3rem;
   &:after {
-    content: '${(props) => props.type}';
+    content: '${props => props.type}';
     display: block;
   }
 `;
@@ -52,10 +52,10 @@ const DefaultIcon = () => {
 
 const SearchIcons = () => {
   const [filter, setFilter] = useState('');
-  const setSearch = (ev) => setFilter(ev?.target.value);
+  const setSearch = ev => setFilter(ev?.target.value);
   return (
     <div>
-      <input type='text' placeholder='search icon' onChange={setSearch} />
+      <input type="text" placeholder="search icon" onChange={setSearch} />
       <Wrapper>
         {Object.entries(TYPES)
           .filter(([, t]) => new RegExp(filter).test(t))
